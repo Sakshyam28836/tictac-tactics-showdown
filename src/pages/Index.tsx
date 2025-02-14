@@ -22,14 +22,16 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4 animate-fade-in">
-      <Card className="w-full max-w-lg p-6 space-y-6">
-        <h1 className="text-3xl font-semibold text-center tracking-tight">Tic-Tac-Toe</h1>
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 animate-fade-in bg-background">
+      <Card className="w-full max-w-lg p-6 space-y-6 shadow-lg border-2">
+        <h1 className="text-3xl font-bold text-center tracking-tight bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+          Tic-Tac-Toe
+        </h1>
         {!showModes ? (
           <div className="flex justify-center">
             <Button 
               size="lg" 
-              className="w-48 h-16 text-lg"
+              className="w-48 h-16 text-lg bg-primary hover:bg-primary/90 transition-all duration-300 shadow-md"
               onClick={() => setShowModes(true)}
             >
               Start Game
@@ -45,7 +47,7 @@ const Index = () => {
                 <button
                   key={level}
                   onClick={() => handleDifficultySelect(level)}
-                  className="px-6 py-3 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors capitalize"
+                  className="px-6 py-3 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors capitalize shadow-sm"
                 >
                   {level}
                 </button>
@@ -65,7 +67,7 @@ const Index = () => {
         )}
       </Card>
       <footer className="mt-8 text-sm text-muted-foreground text-center">
-        <p>© 2025 by Sakshyam Paudel. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} by Sakshyam Paudel. All rights reserved.</p>
       </footer>
     </div>
   );
